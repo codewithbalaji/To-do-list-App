@@ -8,28 +8,27 @@
 .container {
   width: 100%;
   min-height: 100vh;
-  background: linear-gradient(135deg, #16429b, #3c034b);
+  background: linear-gradient(100deg, #001214, #001f29);
   padding: 10px;
 }
 
 .todo-app {
   width: 100%;
   max-width: 540px;
-  background: #fff;
   margin: 100px auto 20px;
   padding: 40px 30px 70px;
   border-radius: 10px;
 }
 
 .todo-app h2 {
-  color: #002765;
+  color: #fff;
   display: flex;
   align-items: center;
   margin-bottom: 20px;
 }
 
 .todo-app h2 img {
-  width: 30px;
+  width: 40px;
   margin-left: 10px;
 }
 
@@ -37,7 +36,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background: #edeef0;
+  background: #01394c;
   border-radius: 30px;
   padding-left: 20px;
   margin-bottom: 25px;
@@ -49,17 +48,24 @@ input {
   outline: none;
   background: transparent;
   padding: 10px;
+  color: #fff;
+  font-size: 1.0625rem;
 }
 
 button {
   border: none;
   outline: none;
   padding: 16px 50px;
-  background: #ff5945;
+  background: #002837;
   color: #fff;
   font-size: 16px;
   cursor: pointer;
   border-radius: 40px;
+  transition: box-shadow 200ms ease, background-color 200ms ease-in-out;
+}
+
+button:hover {
+  background-color: #001f29;
 }
 
 ul li {
@@ -69,6 +75,7 @@ ul li {
   user-select: none;
   cursor: pointer;
   position: relative;
+  color: #fff;
 }
 
 ul li::before {
@@ -90,7 +97,7 @@ ul li.checked {
 }
 
 ul li.checked::before {
-  background-image: url(/images/checked.png);
+  background-image: url(/images/check2.png);
 }
 
 ul li span {
@@ -108,4 +115,39 @@ ul li span {
 
 ul li span:hover {
   background: #edeef0;
+}
+
+.container #datetime {
+  color: #fff;
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 10px;
+}
+
+footer {
+  text-align: center;
+  padding: 10px;
+  background: transparent;
+  color: #fff;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
+/* Mobile Responsive Styles */
+@media (max-width: 767px) {
+  .row {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  input {
+    margin-bottom: 10px;
+  }
+
+  button {
+    margin-top: 10px;
+    align-self: flex-end;
+  }
 }
